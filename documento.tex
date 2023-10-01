@@ -1,185 +1,217 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 				Customizações do abnTeX2 para o IFCE    			   %%%
-%%% 		Instituto Federal de Educação, Ciência e Tecnologia do Ceará   %%%
-%%%																	       %%%
-%%% Template disponível em: https://github.com/clodomirneto/IFCETeX2	   %%%
-%%% Desenvolvedores do IFCETeX2: Professor Clodomir Silva Lima Neto	       %%%
-%%% 							 Professor Marcelo Araújo Lima		       %%%
-%%% 					  	     Professor Antonio Sergio de Sousa Vieira  %%%
-%%% E-mails para contato: clodomir.neto@ifce.edu.br						   %%%
-%%% 					  marcelo.alima@ifce.edu.br					       %%%
-%%% 					  sergio.vieira@ifce.edu.br					       %%%
-%%%																		   %%%
-%%% Agradecimento: Thiago Nascimento 									   %%%
-%%% https://github.com/thiagodnf/uecetex2                                  %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 			Instruções para Uso do Template IFCETeX2	  			   %%%
-%%%																	       %%%
-%%% 1. Criar uma conta no Overleaf.									       %%%
-%%% 2. No Ambiente Overleaf, clicar em Menu (canto superior esquerdo) 	   %%% 
-%%% 3. Clicar em "Copiar Projeto".  									   %%%
-%%% 4. Dê um novo nome para o Projeto. 								       %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[        
+    a4paper,          % Tamanho da folha A4
+    12pt,             % Tamanho da fonte 12pt
+    chapter=TITLE,    % Todos os capitulos devem ter caixa alta
+    section=Title,    % Todas as secoes devem ter caixa alta somente na primeira letra
+    subsection=Title, % Todas as subsecoes devem ter caixa alta somente na primeira letra
+    oneside,          % Usada para impressao em apenas uma face do papel
+    english,          % Hifenizacoes em ingles
+    spanish,          % Hifenizacoes em espanhol
+    brazil,           % Ultimo idioma eh o idioma padrao do documento
+    fleqn             % Comente esta linha se quiser centralizar as equacoes. Comente também a linha 65 abaixo
+]{abntex2}
 
-\input{preambulo}
 
-% Opções disponíveis
 
-%\trabalhoacademico{tese}
-%\trabalhoacademico{dissertacao}
+\input{lib/preambulo}
+
+\setlength{\mathindent}{0pt} %Complementa o alinhamento de equações para totalmente a esquerda.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                     ATENCAO                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Qual e o nivel do trabalho academico que voce esta 
+% escrevendo? Retire o simbolo "%" apenas de um dos 
+% quatro topicos abaixo refente ao nível do seu traba
+% -lho.
+
+\trabalhoacademico{tccgraduacao}
 %\trabalhoacademico{tccespecializacao}
-%\trabalhoacademico{tccgraduacao}
+% \trabalhoacademico{dissertacao}
+%\trabalhoacademico{tese}
 
-% Define se o trabalho é uma qualificação, coloque 'nao' para versão final do trabalho
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define se o trabalho e uma qualificacao
+% Coloque 'nao' para versao final do trabalho
 
 \ehqualificacao{nao}
 
-% Remove as bordas vermelhas e verdes do PDF gerado, coloque 'sim' para remover
+% Remove as bordas vermelhas e verdes do PDF gerado
+% Coloque 'sim' pare remover
 
-\removerbordasdohyperlink{nao} 
+\removerbordasdohyperlink{sim} 
 
-% Adiciona a cor azul a todos os hyperlinks
+% Adiciona a cor Azul a todos os hyperlinks
 
 \cordohyperlink{nao}
 
-% Informação relacionadas ao trabalho
-
-\autor{Nome Completo do Autor}
-\titulo{Título do Trabalho: Subtítulo (se houver)}
-\local{Cidade - UF}
-\data{Ano de Entrega}
-
-% Informação sobre a IES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Informacao sobre a instituicao          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ies{Instituto Federal de Educação, Ciência e Tecnologia do Ceará}
 \iessigla{IFCE}
-\centro{\textit{Campus} Crateús}
+\campus{Campus Fortaleza}
 
-% Informação para Tese
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%        Informacao para TCC de Graduacao         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\programadoutorado{Programa de Pós-Graduação em Saúde Coletiva}
-\nomedodoutorado{Doutorado em Saúde Coletiva}
-\doutorem{Saúde Coletiva}
-\areadeconcentracaodoutorado{Saúde Coletiva}
+\graduacaoem{Aprendizado de Máquina}
+% \habilitacao{licenciado} %ou bacharel/tecnólogo
 
-% Informação para Dissertacao
+% AVISO: Caso necessario alterar o texto de apresenta-
+% cao da Especializacao, ir a pasta "lib", arquivo 
+% "ifcetex.sty" na linha 502.
 
-\programamestrado{Programa de Pós-Graduação em Ciência da Computação}
-\nomedomestrado{Mestrado Acadêmico em Ciência da Computação}
-\mestreem{Ciência da Computação}
-\areadeconcentracaomestrado{Ciência da Computação}
 
-% Informação para TCC de Especialização
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     Informacao para TCC de Especializacao       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\especializacaoem{Ensino de Ciências da Natureza e Matemática}
-\habilitacaoesp{Especialista}
-\areadeconcentracaoespecializacao{Ensino de Matemática}
+% \especializacaoem{Yyyyyyyyy}
 
-% Informação para TCC de Graduação
+% AVISO: Caso necessario alterar o texto de apresenta-
+% cao da Especializacao, ir a pasta "lib", arquivo 
+% "ifcetex.sty" na linha 507.
 
-\graduacaoem{Licenciatura em Matemática} 
-\habilitacao{Licenciado} % Licenciado ou Bacharel
-\areadeconcentracaograduacao{Matemática}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Informacao para Dissertacao             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Data de Aprovação
+% \programamestrado{Programa de Pós-Graduação em Xxxxxxx}
+% \nomedomestrado{Mestrado Acadêmico em Xxxxxxx}
+% \mestreem{Engenharia Xxxxxx}
+% \areadeconcentracaomestrado{Engenharia Xxxxxx}
 
-\dataaprovacao{\underline{\hspace*{1cm}}/\underline{\hspace*{1cm}}/\underline{\hspace*{1.2cm}}.}
+% AVISO: Caso necessario alterar o texto de apresenta-
+% cao da dissertacao, ir a pasta "lib", arquivo 
+% "ifcetex.sty" na linha 511.
 
-% Abreviaturas dos títulos acadêmicos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               Informação para Tese              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Especialista: Esp.
-% Mestre: Me.
-% Mestra: Ma.
-% Doutor: Dr.
-% Doutora: Dra.
+% \programadoutorado{Programa de Pós-Graduação em Xxxxxx}
+% \nomedodoutorado{Doutorado em Xxxxxxx}
+% \doutorem{Engenharia Xxxxxx}
+% \areadeconcentracaodoutorado{Engenharia Xxxxxxx}
 
-% Informação sobre o Orientador
+% AVISO: Caso necessario alterar o texto de apresenta-
+% cao da tese, ir a pasta "lib", arquivo "ifcetex.sty" 
+% na linha 515.
 
-\orientador{Prof. Dr. XXXXX}
-\orientadories{Instituto Federal de Educação, Ciência e Tecnologia do Ceará}
-\orientadoriessigla{IFCE}
-\orientadorcentro{\textit{Campus} Crateús}
-\orientadorfeminino{nao} % Coloque 'sim' se for do sexo feminino
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%      Informacoes relacionadas ao trabalho       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Informação sobre o Coorientador
+\autor{Raiane Rocha Reis}
+\titulo{Relatório: Métodos de Classificação}
+\data{2023}
+\local{Fortaleza}
 
-\coorientador{Profa. Ma. XXXXX} % Deixe o nome do coorientador em branco para remover do documento
-\coorientadories{Instituto Federal de Educação, Ciência e Tecnologia do Ceará}
-\coorientadoriessigla{IFCE}
-\coorientadorcentro{\textit{Campus} Crateús}
-\coorientadorfeminino{sim} % Coloque 'sim' se for do sexo feminino
+% Exemplo: \dataaprovacao{01 de Janeiro de 2012}
+% \dataaprovacao{}
 
-% Informação sobre a banca
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           Informação sobre o Orientador         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Membro da Banca Dois
+% \orientador{Dr. Xxxxxx Xxxxx Xxxxxx}
+\orientadories{Instituto Federal de Educação, Ciência e Tecnologia do Ceará (IFCE)}
+% \orientadorcentro{Centro de Ciências e Tecnologia (CCT)}
+% \orientadorfeminino{nao} % Coloque 'sim' se for do sexo feminino
 
-\membrodabancadois{Prof. Dra. XXXXX}
-\membrodabancadoisies{Instituto Federal de Educação, Ciência e Tecnologia do Ceará}
-\membrodabancadoisiessigla{IFCE}
-\membrodabancadoiscentro{\textit{Campus} Crateús}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%          Informação sobre o Coorientador        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Membro da Banca Três
+% Deixe o nome do coorientador em branco para remover do documento
 
-\membrodabancatres{Prof. Dra. XXXXX}
-\membrodabancatresies{Instituto Federal de Educação, Ciência e Tecnologia do Ceará}
-\membrodabancatresiessigla{IFCE}
-\membrodabancatrescentro{\textit{Campus} Crateús}
+\coorientador{}
+\coorientadories{}
+% \coorientadorcentro{Centro do Coorientador (SIGLA)}
+\coorientadorfeminino{nao} % Coloque 'sim' se for do sexo feminino
 
-% Informação Complementar sobre a banca
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%              Informação sobre a banca           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\membrodabancaquatro{Membro da Banca Quatro}
-\membrodabancaquatrocentro{Centro de Ciências e Tecnologia - CCT}
-\membrodabancaquatroies{Universidade do Membro da Banca Quatro - SIGLA}
-\membrodabancacinco{Membro da Banca Cinco}
-\membrodabancacincocentro{Teste}
-\membrodabancacincoies{Universidade do Membro da Banca Cinco - SIGLA}
-\membrodabancaseis{Membro da Banca Seis}
-\membrodabancaseiscentro{}
-\membrodabancaseisies{Universidade do Membro da Banca Seis - SIGLA}
+% Atenção! Deixe em branco o nome do membro da banca para remover da folha de aprovacao
+
+% Exemplo de uso:
+% \membrodabancadois{Prof. Dr. Fulano de Tal}
+% \membrodabancadoisies{Universidade Federal do Ceará - ifce}
+
+
+% \membrodabancadois{Dr. Xxxxxxx Xxxxxx Xxxxxxx}
+% \membrodabancadoiscentro{Centro de Física Teórica e Computacional}
+% \membrodabancadoisies{Universidade de Lisboa (ULisboa)}
+% \membrodabancatres{Dr. Xxxxxxx Xxxxxx Xxxxxxx}
+% \membrodabancatrescentro{Xxxxxxx Xxxxxx Xxxxxxx}
+% \membrodabancatresies{Universidade do Membro da Banca Três (SIGLA)}
+% \membrodabancaquatro{Prof. Dr. Xxxxxxx Xxxxxx Xxxxxxx}
+% \membrodabancaquatrocentro{Centro de Ciências e Tecnologia (CCT)}
+% \membrodabancaquatroies{Universidade do Membro da Banca Quatro (SIGLA)}
+% \membrodabancacinco{Prof. Dr. Xxxxxxx Xxxxxx Xxxxxxx}
+% \membrodabancacincocentro{Teste}
+% \membrodabancacincoies{Universidade do Membro da Banca Cinco (SIGLA)}
+% \membrodabancaseis{Prof. Dr. Xxxxxxx Xxxxxx Xxxxxxx}
+% \membrodabancaseiscentro{}
+% \membrodabancaseisies{Universidade do Membro da Banca Seis (SIGLA)}
 
 \begin{document}	
 
-% Elementos pré-textuais
-
-\imprimircapa
-\imprimirfolhaderosto{}
-\imprimirfichacatalografica{elementos-pre-textuais/ficha-catalografica}
-%\imprimirerrata{elementos-pre-textuais/errata}
-\imprimirfolhadeaprovacao
-\imprimirdedicatoria{elementos-pre-textuais/dedicatoria}
-\imprimiragradecimentos{elementos-pre-textuais/agradecimentos}
-\imprimirepigrafe{elementos-pre-textuais/epigrafe}
-\imprimirresumo{elementos-pre-textuais/resumo}
-\imprimirabstract{elementos-pre-textuais/abstract}
-\imprimirlistadefiguras
-\imprimirlistadetabelas
-%\imprimirlistadequadros
-%\imprimirlistadealgoritmos
-%\imprimirlistadecodigosfonte
-\imprimirlistadesiglas{elementos-pre-textuais/lista-de-siglas}
-\imprimirlistadesimbolos{elementos-pre-textuais/lista-de-simbolos}
-\imprimirsumario
+	% Elementos pré-textuais
+	%Se não for usar algum dos elementos, deixe-o comentado
+	\imprimircapa
+	% \imprimirfolhaderosto{}
+	% \imprimirfichacatalografica{1-pre-textuais/ficha-catalografica}
+	% \imprimirerrata{1-pre-textuais/errata}
+	% \imprimirfolhadeaprovacao
+	% \imprimirdedicatoria{1-pre-textuais/dedicatoria}
+	% \imprimiragradecimentos{1-pre-textuais/agradecimentos}
+	% \imprimirepigrafe{1-pre-textuais/epigrafe}
+	% \imprimirresumo{1-pre-textuais/resumo}
+	% \imprimirabstract{1-pre-textuais/abstract}
+	% \renewcommand*\listfigurename{Lista de Figuras} %Se você comentar esta linha o título da lista fica: LISTA DE ILUSTRAÇÕES
+	% \imprimirlistadeilustracoes
+	% \imprimirlistadetabelas
+	% \imprimirlistadequadros
+	% \imprimirlistadealgoritmos
+	% \imprimirlistadecodigosfonte
+	% \imprimirlistadeabreviaturasesiglas
+	% \imprimirlistadesimbolos{1-pre-textuais/lista-de-simbolos}   
+	\imprimirsumario
 	
-% Elementos textuais
-
-\textual
-\input{elementos-textuais/introducao}
-\input{elementos-textuais/fundamentacao-teorica}
-%\input{elementos-textuais/trabalhos-relacionados}
-%\input{elementos-textuais/metodologia}
-%\input{elementos-textuais/resultados}
-\input{elementos-textuais/conclusao}
+	\setcounter{table}{0}% Deixe este comando antes da primeira tabela.
 	
-% Elementos pós-textuais
+	%Elementos textuais
+	\textual
+	\input{2-textuais/1-introducao}
+	\input{2-textuais/2-fundamentacao-teorica}
+	\input{2-textuais/3-justificativa}
+	\input{2-textuais/4-objetivos}
+	\input{2-textuais/5-metodologia}
+	\input{2-textuais/6-resultados}
+	\input{2-textuais/7-conclusao}
+	
+	%Elementos pós-textuais	
+	\bibliography{3-pos-textuais/referencias}
+%	\imprimirglossario	
+	% \imprimirapendices
+		% Adicione aqui os apendices do seu trabalho
+		% \input{3-pos-textuais/apendices/apendice-a}
+		% \input{3-pos-textuais/apendices/apendice-b}
+		% \input{3-pos-textuais/apendices/apendice-c}
+		% \input{3-pos-textuais/apendices/apendice-d}
+	% \imprimiranexos
+		% Adicione aqui os anexos do seu trabalho
+	% 	\input{3-pos-textuais/anexos/anexo-a}
+	% 	\input{3-pos-textuais/anexos/anexo-b}		
+	% \imprimirindice
 
-\bibliography{elementos-pos-textuais/referencias}
-%\imprimirglossario	
-\imprimirapendices
-\input{elementos-pos-textuais/apendice-a}
-\imprimiranexos
-\input{elementos-pos-textuais/anexo-a}		
-%\imprimirindice
 
 \end{document}
