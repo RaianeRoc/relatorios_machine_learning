@@ -1,0 +1,15 @@
+{
+    "cSpell.language": "en,pt-BR,pt,en-US,en-GB",
+    "cSpell.enableFiletypes": [
+        "!scminput",
+        "latex-expl3",
+        "markdown-math",
+        "tex"
+    ],
+    "cSpell.words": [
+        "backpropagation",
+        "idenpendente",
+        "ifce",
+        "retropropagação"
+    ]
+}
