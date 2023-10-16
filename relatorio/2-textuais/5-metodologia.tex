@@ -78,22 +78,31 @@ escalares que representam o grau semelhança entre as amostras \cite{noronha2016
 De acordo com esse teorema se a matiz k é positivamente definida, ou seja k é a matriz do produto interno dos dados de entrada \cite{falcao2017aplicaccao}.
 
 \subsection{kernel RBF}
-
+Os \textit{kernels} Função de base radial (RBF - \textit{radial basis function}) Aplica uma transformação nos pontos utilizando uma função gaussiana, definida 
+pela a Equação \ref{eq:RBF} \cite{Almeida_Carvalho_Menino_2020}.
 \begin{equation}
-  exp\left (-\frac{||xi - xj||^2}{2\alpha^2}  \right )
-  \label{eq:polinK}
+  k( x_{i},  x_{j}) = exp\left (-\frac{||x_{i} - x_{j}||^2}{2\alpha^2}  \right )
+  \label{eq:RBF}
 \end{equation}
 
 \subsection{kernel Polinomial}
 
-Kernel Polinomial calcula a similaridade dos pares por meio de uma função polinomial. É amplamente utilizado, pois possui bom desempenho com relação ao processamento de linguagem natural. Também é 
-possível, através dessa função, classificar problemas não linearmente separados \cite{noronha2016implementaccao}. 
+\textit{Kernel} Polinomial, podem introduzir curvaturas no hiperplanos, ou seja, são capazes de separar os dados
+de maneira não linear. Como mostra a Equação \ref{eq:polinK} Além das amostras, este \textit{kernel} depende de uma variável \textbf{d} (grau do 
+polinômio) \cite{noronha2016implementaccao}. 
 
 \begin{equation}
-  [(xi\cdot xj) + 1]^p
+  k( x_{i},  x_{j}) = [(x_{i} \cdot x_{j}) + 1]^d
   \label{eq:polinK}
 \end{equation}
 
 
 \subsection{kernel Linear}
-oi oio oi
+O \textit{kernel} linear tem como base a equação da reta (Equação \ref{eq:linark}), portanto divide as classes de maneira linear, o que trás uma
+limitação se comparado aos \textit{kernels} já apresentados neste trabalho \cite{Almeida_Carvalho_Menino_2020}.
+
+
+\begin{equation}
+  k( x_{i},  x_{j}) = x_{i} \cdot x_{j}
+  \label{eq:linark}
+\end{equation}
