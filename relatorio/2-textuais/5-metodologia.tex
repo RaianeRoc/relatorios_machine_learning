@@ -73,10 +73,27 @@ acontece.
     \label{fig:SVM_1}
 \end{figure}
 
+\textit{Kernel} é uma função responsável por calcular a similaridade entre pares de conjuntos, as entradas, e o resultado são números
+escalares que representam o grau semelhança entre as amostras \cite{noronha2016implementaccao}. Uma função é chamada de \textit{kernel} quando satisfaz as condições do teorema de mercer. 
+De acordo com esse teorema se a matiz k é positivamente definida, ou seja k é a matriz do produto interno dos dados de entrada \cite{falcao2017aplicaccao}.
+
 \subsection{kernel RBF}
 
-
+\begin{equation}
+  exp\left (-\frac{||xi - xj||^2}{2\alpha^2}  \right )
+  \label{eq:polinK}
+\end{equation}
 
 \subsection{kernel Polinomial}
 
+Kernel Polinomial calcula a similaridade dos pares por meio de uma função polinomial. É amplamente utilizado, pois possui bom desempenho com relação ao processamento de linguagem natural. Também é 
+possível, através dessa função, classificar problemas não linearmente separados \cite{noronha2016implementaccao}. 
+
+\begin{equation}
+  [(xi\cdot xj) + 1]^p
+  \label{eq:polinK}
+\end{equation}
+
+
 \subsection{kernel Linear}
+oi oio oi
