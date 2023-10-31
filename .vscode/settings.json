@@ -11,5 +11,6 @@
         "idenpendente",
         "ifce",
         "retropropagação"
-    ]
+    ],
+    "files.autoSave": "afterDelay"
 }
